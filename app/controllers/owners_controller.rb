@@ -33,6 +33,7 @@ class OwnersController < ApplicationController
   end
 
   patch '/owners/:id' do
+    partition { |e|  }
     if !params[:owner].keys.include?("pets_ids")
       params[:owner]["pets_ids"] = []
     end
